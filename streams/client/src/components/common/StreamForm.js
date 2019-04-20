@@ -18,7 +18,7 @@ class StreamForm extends Component {
     return (
       <div className={className}>
         <label>{label}</label>
-        <input {...input} autoComplete="off" />
+        <input {...input} />
         {this.renderError(meta)}
       </div>
     );
@@ -26,7 +26,7 @@ class StreamForm extends Component {
 
   render() {
     return (
-      <form className="ui form error" onSubmit={this.props.handleSubmit}>
+      <form className="ui form error" onSubmit={this.props.handleSubmit} autoComplete="off" >
         <Field name="title" label="Enter Title" component={this.renderInput} />
         <Field name="description" label="Enter Description" component={this.renderInput} />
         <button className="ui button primary" type="submit">Submit</button>
